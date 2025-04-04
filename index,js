@@ -1,0 +1,15 @@
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const PORT = 8081;
+
+app.use(cors()); // Biar bisa diakses dari React Native
+
+// Endpoint untuk pengecekan koneksi
+app.get("/api/check", (req, res) => {
+  res.json({ status: "Tersambung ke Server Backend!" });
+});
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ Server berjalan di http://0.0.0.0:${PORT}`);
+});
